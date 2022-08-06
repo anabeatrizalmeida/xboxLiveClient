@@ -1,16 +1,28 @@
 import { ReactComponent as Search } from "assets/icons/search.svg";
 import * as S from "./style";
+import Menu from "components/Menu";
+import { RoutePath } from "types/routes";
+import { navigationItems } from "data/navigation";
+import { DateTime } from "luxon";
+import GamesItemList from "components/GamesItemList";
+import GamesItem from "components/GamesItem";
 
 const Home = () => {
+  const dateDescription = DateTime.now().toLocaleString({
+    ...DateTime.DATE_SHORT,
+    weekday: "long",
+  });
+
   return (
     <S.Home>
+      <Menu active={RoutePath.HOME} navItems={navigationItems} />
       <S.HomeContent>
         <header>
           <S.HomeHeaderDetails>
             <div>
               <S.HomeHeaderDetailsLogo>XBOX LIVE</S.HomeHeaderDetailsLogo>
               <S.HomeHeaderDetailsDate>
-                Date
+                {dateDescription}
               </S.HomeHeaderDetailsDate>
             </div>
             <S.HomeHeaderDetailsSearch>
@@ -24,7 +36,9 @@ const Home = () => {
             <b>Games</b>
           </S.HomeProductTitle>
           <S.HomeProductList>
-            <p>Game list</p>
+            <GamesItemList>
+              <GamesItem />
+            </GamesItemList>
           </S.HomeProductList>
         </div>
       </S.HomeContent>
