@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const GamesItem = styled.div`
+export const GamesCard= styled.div`
 	${({ theme }) => css`
 		background: ${theme.colors.baseBg2};
 		border-radius: 16px;
@@ -23,14 +23,14 @@ export const GamesItem = styled.div`
 	`}
 `;
 
-export const GamesItemImage = styled.img`
+export const GamesCardImage = styled.img`
 	${() => css`
 		width: 150px;
 		margin-top: -50px;
 	`}
 `;
 
-export const GamesItemName = styled.h3`
+export const GamesCardName = styled.h3`
 	${({ theme }) => css`
 		${theme.mixins.bodyStyle()}
 		text-align: center;
@@ -39,7 +39,7 @@ export const GamesItemName = styled.h3`
 	`}
 `;
 
-export const GamesItemPrice = styled.strong`
+export const GamesCardYear = styled.strong`
 	${({ theme }) => css`
 		${theme.mixins.bodyStyle()}
 		text-align: center;
@@ -49,12 +49,13 @@ export const GamesItemPrice = styled.strong`
 	`}
 `;
 
-export const GamesItemDescription = styled.small`
+export const GamesCardDescription = styled.small`
 	${({ theme }) => css`
 		${theme.mixins.bodyStyle()}
 		text-align: center;
 		max-width: 90%;
 		margin: 0;
 		font-size: 12px;
+		margin-bottom: 5px;
 	`}
 `;

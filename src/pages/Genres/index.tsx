@@ -10,7 +10,7 @@ import { games } from "mocks/games";
 import { Games } from "types/Games";
 import { useNavigate } from "react-router-dom";
 
-const Home = () => {
+const Genres = () => {
   const dateDescription = DateTime.now().toLocaleString({
     ...DateTime.DATE_SHORT,
     weekday: "long",
@@ -20,35 +20,34 @@ const Home = () => {
   const handleSelection = (games: Games) => {};
 
   return (
-    <S.Home>
+    <S.Genres>
       <Menu
-        active={RoutePath.HOME}
+        active={RoutePath.GENRES}
         navItems={navigationItems}
         onNavigate={handleNavigation}
         onLogout={() => navigate(RoutePath.LOGIN)}
       />
-      <S.HomeContent>
+      <S.GenresContent>
         <header>
-          <S.HomeHeaderDetails>
+          <S.GenresHeaderDetails>
             <div>
-              <S.HomeHeaderDetailsLogo>XBOX LIVE</S.HomeHeaderDetailsLogo>
-              <S.HomeHeaderDetailsDate>
+              <S.GenresHeaderDetailsLogo>XBOX LIVE</S.GenresHeaderDetailsLogo>
+              <S.GenresHeaderDetailsDate>
                 {dateDescription}
-              </S.HomeHeaderDetailsDate>
+              </S.GenresHeaderDetailsDate>
             </div>
-            <S.HomeHeaderDetailsSearch>
+            <S.GenresHeaderDetailsSearch>
               <Search />
               <input type="text" placeholder="Search the game" />
-            </S.HomeHeaderDetailsSearch>
-          </S.HomeHeaderDetails>
+            </S.GenresHeaderDetailsSearch>
+          </S.GenresHeaderDetails>
         </header>
         <div>
-          <S.HomeGamesTitle>
+          <S.GenresGamesTitle>
             <button onClick={() => navigate("/")}>Games</button>
-            <button onClick={() => navigate("/favoritegames")}>Favorite Games</button>
             <button onClick={() => navigate("/genres")}>Genres</button>
-          </S.HomeGamesTitle>
-          <S.HomeGamesList>
+          </S.GenresGamesTitle>
+          <S.GenresGamesList>
             <GamesList>
               {Boolean(games.length) &&
                 games.map((games, index) => (
@@ -59,11 +58,11 @@ const Home = () => {
                   />
                 ))}
             </GamesList>
-          </S.HomeGamesList>
+          </S.GenresGamesList>
         </div>
-      </S.HomeContent>
-    </S.Home>
+      </S.GenresContent>
+    </S.Genres>
   );
 };
 
-export default Home;
+export default Genres;

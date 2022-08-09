@@ -16,15 +16,7 @@ export const BoxLogin = styled.section`
 	`}
 `;
 
-export const BoxLoginLogo = styled.div`
-  ${() => css`
-  	display: flex;
-  	justify-content: space-around;
-  	align-items: center;
-  `}
-`;
-
-export const BoxLoginLogoText = styled.h1`
+export const BoxLoginText = styled.h1`
   ${({ theme }) => css`
   	font-family: ${theme.constants.logoFontFamily};
   	font-size: 4em;

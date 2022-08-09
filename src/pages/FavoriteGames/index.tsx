@@ -10,7 +10,7 @@ import { games } from "mocks/games";
 import { Games } from "types/Games";
 import { useNavigate } from "react-router-dom";
 
-const Home = () => {
+const FavoriteGames = () => {
   const dateDescription = DateTime.now().toLocaleString({
     ...DateTime.DATE_SHORT,
     weekday: "long",
@@ -20,35 +20,34 @@ const Home = () => {
   const handleSelection = (games: Games) => {};
 
   return (
-    <S.Home>
+    <S.FavoriteGames>
       <Menu
-        active={RoutePath.HOME}
+        active={RoutePath.FAVORITE_GAMES}
         navItems={navigationItems}
         onNavigate={handleNavigation}
         onLogout={() => navigate(RoutePath.LOGIN)}
       />
-      <S.HomeContent>
+      <S.FavoriteGamesContent>
         <header>
-          <S.HomeHeaderDetails>
+          <S.FavoriteGamesHeaderDetails>
             <div>
-              <S.HomeHeaderDetailsLogo>XBOX LIVE</S.HomeHeaderDetailsLogo>
-              <S.HomeHeaderDetailsDate>
+              <S.FavoriteGamesHeaderDetailsLogo>XBOX LIVE</S.FavoriteGamesHeaderDetailsLogo>
+              <S.FavoriteGamesHeaderDetailsDate>
                 {dateDescription}
-              </S.HomeHeaderDetailsDate>
+              </S.FavoriteGamesHeaderDetailsDate>
             </div>
-            <S.HomeHeaderDetailsSearch>
+            <S.FavoriteGamesHeaderDetailsSearch>
               <Search />
               <input type="text" placeholder="Search the game" />
-            </S.HomeHeaderDetailsSearch>
-          </S.HomeHeaderDetails>
+            </S.FavoriteGamesHeaderDetailsSearch>
+          </S.FavoriteGamesHeaderDetails>
         </header>
         <div>
-          <S.HomeGamesTitle>
+          <S.FavoriteGamesGamesTitle>
             <button onClick={() => navigate("/")}>Games</button>
             <button onClick={() => navigate("/favoritegames")}>Favorite Games</button>
-            <button onClick={() => navigate("/genres")}>Genres</button>
-          </S.HomeGamesTitle>
-          <S.HomeGamesList>
+          </S.FavoriteGamesGamesTitle>
+          <S.FavoriteGamesGamesList>
             <GamesList>
               {Boolean(games.length) &&
                 games.map((games, index) => (
@@ -59,11 +58,11 @@ const Home = () => {
                   />
                 ))}
             </GamesList>
-          </S.HomeGamesList>
+          </S.FavoriteGamesGamesList>
         </div>
-      </S.HomeContent>
-    </S.Home>
+      </S.FavoriteGamesContent>
+    </S.FavoriteGames>
   );
 };
 
-export default Home;
+export default FavoriteGames;

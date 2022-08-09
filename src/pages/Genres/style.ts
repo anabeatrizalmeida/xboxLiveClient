@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Home = styled.section`
+export const Genres= styled.section`
   ${({ theme }) => css`
     background-color: ${theme.colors.baseBg1};
     color: ${theme.colors.textColor};
@@ -9,7 +9,7 @@ export const Home = styled.section`
   `}
 `;
 
-export const HomeContent = styled.main`
+export const GenresContent = styled.main`
   ${() => css`
     width: 100%;
     padding: 20px;
@@ -19,14 +19,14 @@ export const HomeContent = styled.main`
   `}
 `;
 
-export const HomeHeaderDetails = styled.div`
+export const GenresHeaderDetails = styled.div`
   ${() => css`
     display: flex;
     justify-content: space-between;
   `}
 `;
 
-export const HomeHeaderDetailsLogo = styled.h1`
+export const GenresHeaderDetailsLogo = styled.h1`
   ${({ theme }) => css`
     ${theme.mixins.logoStyle};
     text-transform: uppercase;
@@ -34,13 +34,13 @@ export const HomeHeaderDetailsLogo = styled.h1`
   `}
 `;
 
-export const HomeHeaderDetailsDate = styled.p`
+export const GenresHeaderDetailsDate = styled.p`
   ${() => css`
     text-transform: capitalize;
   `}
 `;
 
-export const HomeHeaderDetailsSearch = styled.div`
+export const GenresHeaderDetailsSearch = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
@@ -58,7 +58,7 @@ export const HomeHeaderDetailsSearch = styled.div`
   `}
 `;
 
-export const HomeGamesTitle = styled.h2`
+export const GenresGamesTitle = styled.h2`
   ${({ theme }) => css`
     margin: 0;
     border-bottom: 1px solid ${theme.colors.baseLine};
@@ -82,14 +82,14 @@ export const HomeGamesTitle = styled.h2`
   `}
 `;
 
-export const HomeGamesList = styled.div`
+export const GenresGamesList = styled.div`
   ${() => css`
     margin-top: 25px;
     padding-bottom: 25px;
   `}
 `;
 
-export const HomeGamesListGap = styled.div`
+export const GenresGamesListGap = styled.div`
   ${({ theme }) => css`
     width: 200px;
   `}
