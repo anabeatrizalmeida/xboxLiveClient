@@ -11,9 +11,6 @@ const ManageUsers = ({ ...props }: ManageUsersProps) => {
   return (
     <S.ManageUsers {...props}>
       <S.ManageUsersTitle>Manage users</S.ManageUsersTitle>
-      <S.ManageUsersSub>
-        <b>Users</b>
-      </S.ManageUsersSub>
       <S.ManageUsersContent>
         <S.ManageUsersContentAdd>
           <Add />

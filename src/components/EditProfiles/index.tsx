@@ -6,17 +6,17 @@ const EditProfiles = () => {
     <S.EditProfiles>
       <>
         <S.EditProfilesDetails>
-          <S.EditProfilesDetailsName>Número da mesa</S.EditProfilesDetailsName>
+          <S.EditProfilesDetailsName>Profile</S.EditProfilesDetailsName>
         </S.EditProfilesDetails>
         <S.EditProfilesAction>
-          <Pencil /> Editar
+          <Pencil /> Edit
         </S.EditProfilesAction>
       </>
 
       <>
-        <label htmlFor="ProfilesId">Número da mesa</label>
-        <S.EditForm id="ProfilesId" type="number" placeholder="01" />
-        <S.Deletar>Deletar Mesa</S.Deletar>
+        <S.EditForm type="text" placeholder="Title" />
+        <S.EditForm type="url" placeholder="Image Url" />
+        <S.Deletar>Delete</S.Deletar>
       </>
     </S.EditProfiles>
   );

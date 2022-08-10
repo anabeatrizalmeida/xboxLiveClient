@@ -8,6 +8,7 @@ import ManageUsers from "components/ManageUsers";
 import ManageProfiles from "components/ManageProfiles";
 import FavoriteGames from "pages/FavoriteGames";
 import Genres from "pages/Genres";
+import ManageGenres from "components/ManageGenres";
 
 const Router = () => {
   return (
@@ -21,6 +22,7 @@ const Router = () => {
         />
         <Route path={RoutePath.SETTINGS_GAMES} element={<ManageGames />} />
         <Route path={RoutePath.SETTINGS_USERS} element={<ManageUsers />} />
+        <Route path={RoutePath.SETTINGS_GENRES} element={<ManageGenres />} />
       </Route>
       <Route path={RoutePath.FAVORITE_GAMES} element={<FavoriteGames />} />
       <Route path={RoutePath.GENRES} element={<Genres />} />

@@ -46,18 +46,10 @@ const FavoriteGames = () => {
           <S.FavoriteGamesGamesTitle>
             <button onClick={() => navigate("/")}>Games</button>
             <button onClick={() => navigate("/favoritegames")}>Favorite Games</button>
+            <button onClick={() => navigate("/genres")}>Genres</button>
           </S.FavoriteGamesGamesTitle>
           <S.FavoriteGamesGamesList>
-            <GamesList>
-              {Boolean(games.length) &&
-                games.map((games, index) => (
-                  <GamesCard
-                    games={games}
-                    key={`GamesCard-${index}`}
-                    onSelect={handleSelection}
-                  />
-                ))}
-            </GamesList>
+          The list of favorite games will be here
           </S.FavoriteGamesGamesList>
         </div>
       </S.FavoriteGamesContent>

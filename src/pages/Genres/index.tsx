@@ -45,19 +45,23 @@ const Genres = () => {
         <div>
           <S.GenresGamesTitle>
             <button onClick={() => navigate("/")}>Games</button>
+            <button onClick={() => navigate("/favoritegames")}>
+              Favorite Games
+            </button>
             <button onClick={() => navigate("/genres")}>Genres</button>
           </S.GenresGamesTitle>
           <S.GenresGamesList>
-            <GamesList>
-              {Boolean(games.length) &&
-                games.map((games, index) => (
-                  <GamesCard
-                    games={games}
-                    key={`GamesCard-${index}`}
-                    onSelect={handleSelection}
-                  />
-                ))}
-            </GamesList>
+            <S.GenresGamesListHeaderTitle>
+              Choose the genre
+            </S.GenresGamesListHeaderTitle>
+            <S.GenresGamesListHeaderSelect>
+              <option value="default">Select the genre</option>
+              <option value="">action</option>
+              <option value="">adventure</option>
+              <option value="">horror</option>
+              <option value="">RPG</option>
+            </S.GenresGamesListHeaderSelect>
+            The games separated by gender will stay here
           </S.GenresGamesList>
         </div>
       </S.GenresContent>

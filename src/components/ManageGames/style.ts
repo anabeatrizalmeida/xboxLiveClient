@@ -12,31 +12,10 @@ export const ManageGamesTitle = styled.h1`
     ${theme.mixins.bodyStyle()};
     font-size: 20px;
     margin: 0;
+    margin-top:3px;
   `}
 `;
 
-export const ManageGamesSub = styled.h2`
-  ${({ theme }) => css`
-    ${theme.mixins.bodyStyle()};
-    margin: 25px 0 0 0;
-    border-bottom: 1px solid ${theme.colors.baseLine};
-    color: ${theme.colors.primaryColor};
-    padding-bottom: 10px;
-    b {
-      position: relative;
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -13px;
-        width: 100%;
-        height: 4px;
-        background-color: ${theme.colors.primaryColor};
-        border-radius: 5rem;
-      }
-    }
-  `}
-`;
 
 export const ManageGamesContent = styled.div`
   ${() => css`
@@ -67,6 +46,7 @@ export const ManageGamesContentAdd = styled.div`
     border-radius: 8px;
     gap: 10px;
     cursor: pointer;
+    margin-top:5px;
   `}
 `;
 
@@ -77,7 +57,6 @@ export const AddCard = styled.div`
     justify-content: center;
     align-items: center;
     width: 200px;
-    max-height: 285px;
     box-sizing: border-box;
     padding: 10px 0;
     color: ${theme.colors.primaryColor};
@@ -111,7 +90,7 @@ export const ManageGamesActions = styled.div`
 export const ManageGamesActionsCancel = styled.button`
   ${({ theme }) => css`
     width: 172px;
-    ${theme.mixins.buttonOutline(theme.colors.secondaryColor)};
+    ${theme.mixins.buttonOutline()};
   `}
 `;
 

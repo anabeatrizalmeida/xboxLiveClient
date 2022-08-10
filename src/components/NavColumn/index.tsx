@@ -5,6 +5,7 @@ import * as S from "./style";
 import { RoutePath } from "types/routes";
 import NavColumnItem from "components/NavColumnItem";
 import { HTMLAttributes } from "react";
+import { useNavigate } from "react-router-dom";
 
 type NavColumnType = HTMLAttributes<HTMLDivElement>;
 
@@ -13,7 +14,15 @@ type NavColumnProps = {
 } & NavColumnType;
 
 const NavColumn = ({ activeRoute }: NavColumnProps) => {
+  const navigate = useNavigate();
+
   const items = [
+    {
+      icon: <Users />,
+      title: "Manage users",
+      subtitle: "Manage system access",
+      navigation: RoutePath.SETTINGS_USERS,
+    },
     {
       icon: <Edit />,
       title: "Edit your profile",
@@ -27,16 +36,17 @@ const NavColumn = ({ activeRoute }: NavColumnProps) => {
       navigation: RoutePath.SETTINGS_GAMES,
     },
     {
-      icon: <Users />,
-      title: "Manage users",
-      subtitle: "Manage system access",
-      navigation: RoutePath.SETTINGS_USERS,
+      icon: <Info />,
+      title: "Manage genres",
+      subtitle: "Edit genres games",
+      navigation: RoutePath.SETTINGS_GENRES,
     },
   ];
   return (
     <S.NavColumn>
       {items.map((item, key) => (
         <NavColumnItem
+          onClick={() => navigate(item.navigation)}
           active={item.navigation === activeRoute}
           icon={item.icon}
           title={item.title}

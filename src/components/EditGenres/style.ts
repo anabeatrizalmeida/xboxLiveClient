@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const EditProfiles = styled.div`
+export const EditGenres= styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.baseBg2};
     border-radius: 8px;
@@ -34,13 +34,13 @@ export const EditProfiles = styled.div`
   `}
 `;
 
-export const EditProfilesImage = styled.img`
+export const EditGenresImage = styled.img`
   ${() => css`
     width: 130px;
   `}
 `;
 
-export const EditProfilesDetails = styled.div`
+export const EditGenresDetails = styled.div`
   ${() => css`
     display: flex;
     flex-direction: column;
@@ -50,14 +50,14 @@ export const EditProfilesDetails = styled.div`
   `}
 `;
 
-export const EditProfilesDetailsName = styled.h1`
+export const EditGenresDetailsName = styled.h1`
   ${({ theme }) => css`
     ${theme.mixins.headingStyle()};
     text-align: center;
   `}
 `;
 
-export const EditProfilesAction = styled.button`
+export const EditGenresAction = styled.button`
   ${({ theme }) => css`
     width: 100%;
     display: flex;
@@ -80,6 +80,17 @@ export const EditForm = styled.input`
   ${({ theme }) => css`
     ${theme.mixins.input()};
     color: ${theme.colors.textColor};
+  `}
+`;
+
+export const EditFormGroup = styled.div`
+  ${() => css`
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
   `}
 `;
 

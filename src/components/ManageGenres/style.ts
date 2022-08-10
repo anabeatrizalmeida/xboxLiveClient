@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
 
-export const ManageProfiles = styled.section`
+export const ManageGenres = styled.section`
   ${({ theme }) => css`
     padding: 20px;
   `}
 `;
 
-export const ManageProfilesTitle = styled.h1`
+export const ManageGenresTitle = styled.h1`
   ${({ theme }) => css`
     ${theme.mixins.bodyStyle()};
     font-size: 20px;
@@ -14,7 +14,7 @@ export const ManageProfilesTitle = styled.h1`
   `}
 `;
 
-export const ManageProfilesContent = styled.div`
+export const ManageGenresContent = styled.div`
   ${() => css`
     margin-top: 15px;
     justify-content: center;
@@ -27,7 +27,7 @@ export const ManageProfilesContent = styled.div`
     overflow: auto;
   `}
 `;
-export const ManageProfilesContentAdd = styled.div`
+export const ManageGenresContentAdd = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@ export const ManageProfilesContentAdd = styled.div`
   `}
 `;
 
-export const ManageProfilesActions = styled.div`
+export const ManageGenresActions = styled.div`
   ${() => css`
     margin-top: 10px;
     display: flex;
@@ -69,14 +69,14 @@ export const ManageProfilesActions = styled.div`
   `}
 `;
 
-export const ManageProfilesActionsCancel = styled.button`
+export const ManageGenresActionsCancel = styled.button`
   ${({ theme }) => css`
     width: 172px;
     ${theme.mixins.buttonOutline()};
   `}
 `;
 
-export const ManageProfilesActionsSave = styled.button`
+export const ManageGenresActionsSave = styled.button`
   ${({ theme }) => css`
     width: 172px;
     ${theme.mixins.buttonFilled()};

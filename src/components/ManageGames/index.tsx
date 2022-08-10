@@ -11,16 +11,13 @@ const ManageGames = ({ ...props }: ManageGamesProps) => {
   return (
     <S.ManageGames {...props}>
       <S.ManageGamesTitle>Manage games</S.ManageGamesTitle>
-      <S.ManageGamesSub>
-        <b>Games</b>
-      </S.ManageGamesSub>
       <S.ManageGamesContent>
         <S.ManageGamesContentAdd>
           <Add />
           <span>Add games</span>
         </S.ManageGamesContentAdd>
         <S.AddCard>
-          <S.EditForm type="text" placeholder="Title" />
+        <S.EditForm type="text" placeholder="Title" />
           <S.EditForm type="url" placeholder="Cover Image Url" />
           <S.EditForm type="text" placeholder="Description" />
           <S.EditForm type="number" placeholder="Year" />

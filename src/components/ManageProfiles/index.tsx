@@ -11,17 +11,14 @@ const ManageProfiles = ({ ...props }: ManageProfilesProps) => {
   return (
     <S.ManageProfiles {...props}>
       <S.ManageProfilesTitle>Manage Profiles</S.ManageProfilesTitle>
-      <S.ManageProfilesSub>
-        <b>Profiles</b>
-      </S.ManageProfilesSub>
       <S.ManageProfilesContent>
         <S.ManageProfilesContentAdd>
           <Add />
           <span>Add profiles</span>
         </S.ManageProfilesContentAdd>
         <S.ManageProfilesContentAdd>
-          <label htmlFor="tableId">Número da Mesa</label>
-          <S.EditForm id="tableId" type="number" placeholder="01" />
+        <S.EditForm type="text" placeholder="Title" />
+          <S.EditForm type="url" placeholder="Image Url" />
         </S.ManageProfilesContentAdd>
         <EditProfiles />
       </S.ManageProfilesContent>

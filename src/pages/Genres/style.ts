@@ -86,6 +86,11 @@ export const GenresGamesList = styled.div`
   ${() => css`
     margin-top: 25px;
     padding-bottom: 25px;
+    justify-content: center;
+		margin-top: 75px;
+		display: flex;
+		gap: 75px 20px;
+		flex-wrap: wrap;
   `}
 `;
 
@@ -93,4 +98,16 @@ export const GenresGamesListGap = styled.div`
   ${({ theme }) => css`
     width: 200px;
   `}
+`;
+
+export const GenresGamesListHeaderTitle = styled.h1`
+	${() => css`
+		margin: 0;
+	`}
+`;
+
+export const GenresGamesListHeaderSelect = styled.select`
+	${({ theme }) => css`
+		${theme.mixins.select()};
+	`}
 `;

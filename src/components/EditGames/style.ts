@@ -84,7 +84,7 @@ export const EditGamesAction = styled.div`
 export const Delete = styled.button`
   ${({ theme }) => css`
     width: 172px;
-    ${theme.mixins.buttonOutline(theme.colors.secondaryColor)};
+    ${theme.mixins.buttonOutline()};
   `}
 `;
 
