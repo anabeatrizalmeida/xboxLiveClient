@@ -1,46 +1,72 @@
 import * as S from "./style";
-import ButtonLarge from "components/ButtonLarge";
-import { HTMLAttributes, useState } from "react";
+import { useState } from "react";
+import { userLogin } from "types/api/user";
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
+import { loginService } from "services/AuthService";
+import Button1 from "components/Button1";
 
-type BoxLoginType = HTMLAttributes<HTMLDivElement>;
+const BoxLogin = (props: any) => {
+  const [values, setValues] = useState({
+    email: "",
+    password: "",
+  });
 
-export type BoxLoginProps = {
-  onSubmitData: (data: { nickname: string; password: string }) => void;
-  errorMessage: string;
-} & BoxLoginType;
+  let navigate = useNavigate();
 
-const BoxLogin = ({ onSubmitData, errorMessage }: BoxLoginProps) => {
-  const [nickname, setNickname] = useState("");
-  const [password, setPassword] = useState("");
-  const handleSubmit = (): void => {
-    const data = { nickname, password };
-    onSubmitData(data);
+  const handleChangeValues = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValues((values: userLogin) => ({
+      ...values,
+      [event.target.name]: event.target.value,
+    }));
+  };
+
+  const loginUser = async (event: React.SyntheticEvent) => {
+    event.preventDefault();
+    const response = await loginService.login(values);
+    const jwt = response.data.token;
+
+    if (jwt) {
+      localStorage.setItem("jwtLocalStorage", jwt);
+      swal({
+        title: "Welcome!",
+        icon: "success",
+        timer: 3000,
+      });
+      navigate("/homepage");
+    }
+    console.log(response.data);
+    console.log(values);
   };
 
   return (
-    <S.BoxLogin>
+    <S.BoxLogin onSubmit={loginUser}>
       <S.BoxLoginText>
         <span>XBOX LIVE</span>
       </S.BoxLoginText>
       <S.BoxLoginForm>
         <input
-          type="text"
-          placeholder="Nickname"
-          value={nickname}
-          onChange={({ target }) => setNickname(target.value)}
+          type="email"
+          name="email"
+          id="email"
+          placeholder="E-mail"
+          onChange={handleChangeValues}
+          autoComplete="false"
+          required
         />
 
         <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
+           type="password"
+           name="password"
+           id="password"
+           placeholder="Password"
+           onChange={handleChangeValues}
+           required
         />
-        <ButtonLarge value="Login" type="button" onClick={handleSubmit} />
+        <S.Buttons>
+          <Button1 value="LOGIN" type="submit" onSubmit={loginUser} />
+        </S.Buttons>
       </S.BoxLoginForm>
-      {Boolean(errorMessage.length) && (
-        <S.BoxLoginError>{errorMessage}</S.BoxLoginError>
-      )}
     </S.BoxLogin>
   );
 };

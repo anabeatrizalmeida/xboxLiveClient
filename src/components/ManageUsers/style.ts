@@ -15,7 +15,14 @@ export const ManageUsersTitle = styled.h1`
     margin-top:5px;
   `}
 `;
-
+export const ManageUsersSub = styled.h1`
+  ${({ theme }) => css`
+    ${theme.mixins.bodyStyle()};
+    font-size: 20px;
+    margin: 0;
+    margin-top:5px;
+  `}
+`;
 export const ManageUsersContent = styled.div`
   ${() => css`
     margin-top: 15px;

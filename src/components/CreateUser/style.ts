@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const BoxLogin = styled.section`
+export const CreateUser = styled.section`
 	${({ theme }) => css`
 		background: ${theme.colors.baseBg1};
 		width: 330px;
@@ -16,15 +16,15 @@ export const BoxLogin = styled.section`
 	`}
 `;
 
-export const BoxLoginText = styled.h1`
+export const CreateUserText = styled.h1`
   ${({ theme }) => css`
   	font-family: ${theme.constants.logoFontFamily};
-  	font-size: 4em;
+  	font-size: 2rem;
   	line-height: 80px;
   	font-weight: 400;
   	text-transform: uppercase;
-  	margin: 20px 0;
-  	padding: 2.5px 0;
+  	margin: .5px 0;
+  	padding: 2px 0;
   	display: flex;
   	flex-direction: column;
   	justify-content: center;
@@ -32,7 +32,7 @@ export const BoxLoginText = styled.h1`
   `}
 `;
 
-export const BoxLoginForm = styled.form`
+export const CreateUserForm = styled.form`
   ${({ theme }) => css`
   	display: flex;
   	flex-direction: column;
@@ -44,7 +44,7 @@ export const BoxLoginForm = styled.form`
   `}
 `;
 
-export const BoxLoginError = styled.span`
+export const CreateUserError = styled.span`
   ${({ theme }) => css`
   	color: ${theme.colors.secondaryColor};
   	text-align: center;

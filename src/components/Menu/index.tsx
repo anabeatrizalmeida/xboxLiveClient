@@ -1,4 +1,4 @@
-import logo from "assets/imgs/logo.png";
+import logo from "assets/imgs/logo.jpg";
 import * as S from "./style";
 import { ReactComponent as Logout } from "assets/icons/logout.svg";
 import { RoutePath } from "types/routes";

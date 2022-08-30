@@ -1,96 +1,70 @@
-import styled, { css } from "styled-components";
+import styled, {css} from "styled-components";
+import {constants} from "assets/styles/constants";
+import {colors} from "assets/styles/colors";
 
 export const Home = styled.section`
-  ${({ theme }) => css`
-    background-color: ${theme.colors.baseBg1};
+  ${({theme}) => css`
+    background-color: ${theme.colors.baseBg2};
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
     color: ${theme.colors.textColor};
-    display: flex;
-    justify-content: space-between;
   `}
 `;
 
 export const HomeContent = styled.main`
-  ${() => css`
+  ${({theme}) => css`
     width: 100%;
-    padding: 20px;
-    overflow: auto;
-    height: 100vh;
-    box-sizing: border-box;
-  `}
-`;
-
-export const HomeHeaderDetails = styled.div`
-  ${() => css`
+    height: 100%;
+    ${theme.mixins.overlay()};
     display: flex;
-    justify-content: space-between;
-  `}
-`;
+    flex-direction: column;
+    justify-content: center;
+   
+    article {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: ${constants.bodyFontFamily};
+      color: ${colors.textColor};
+      font-size: 2.3rem;
+      margin-top:10rem;
+      margin-bottom:5rem;
+    }
 
-export const HomeHeaderDetailsLogo = styled.h1`
-  ${({ theme }) => css`
-    ${theme.mixins.logoStyle};
-    text-transform: uppercase;
-    margin: 0;
-  `}
-`;
-
-export const HomeHeaderDetailsDate = styled.p`
-  ${() => css`
-    text-transform: capitalize;
-  `}
-`;
-
-export const HomeHeaderDetailsSearch = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    ${theme.mixins.input()};
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-right: 0;
-    input {
-      background: transparent;
-      border: none;
-      height: 100%;
-      color: ${theme.colors.textColor};
+    article p {
+      text-decoration: none;
+      font-family: ${constants.bodyFontFamily};
+      color: ${colors.textColor};
+      font-size: 3rem;
+      margin: 0 2rem 0 2rem;
+      
     }
   `}
 `;
 
-export const HomeGamesTitle = styled.h2`
-  ${({ theme }) => css`
-    margin: 0;
-    border-bottom: 1px solid ${theme.colors.baseLine};
-    ${theme.mixins.bodyStyle()};
-    color: ${theme.colors.primaryColor};
-    padding-bottom: 10px;
-    button {
-      background-color: transparent;
-      text-decoration: none;
-      border: none;
-      color: ${theme.colors.primaryColor};
-      font-weight: 600;
-      font-size: 1.2rem;
-      margin: 10px 5px;
-      transition: 0.3s ease-in-out;
-      cursor: pointer;
-      :hover {
-      color: ${theme.colors.textColor};
-      }
-    
+export const HomeText = styled.div`
+  ${({theme}) => css`
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: ${theme.colors.textColor};
   `}
 `;
 
-export const HomeGamesList = styled.div`
+export const Button = styled.div`
   ${() => css`
-    margin-top: 25px;
-    padding-bottom: 25px;
-  `}
-`;
-
-export const HomeGamesListGap = styled.div`
-  ${({ theme }) => css`
-    width: 200px;
+  background-color: none;
+    width: 10rem;
+    margin: 0;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 0.8rem;
+    margin-top: 0.8rem;
   `}
 `;
